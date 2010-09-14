@@ -2,7 +2,7 @@
 
 package Dancer::Plugin::Authorize::Permissions::Config;
 BEGIN {
-  $Dancer::Plugin::Authorize::Permissions::Config::VERSION = '0.02';
+  $Dancer::Plugin::Authorize::Permissions::Config::VERSION = '0.03';
 }
 
 use strict;
@@ -71,7 +71,7 @@ Dancer::Plugin::Authorize::Permissions::Config - Dancer::Plugin::Authorize acces
 
 =head1 VERSION
 
-version 0.02
+version 0.03
 
 =head1 SYNOPSIS
 

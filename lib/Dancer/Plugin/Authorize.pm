@@ -2,7 +2,7 @@
 
 package Dancer::Plugin::Authorize;
 BEGIN {
-  $Dancer::Plugin::Authorize::VERSION = '0.02';
+  $Dancer::Plugin::Authorize::VERSION = '0.03';
 }
 use strict;
 use warnings;
@@ -95,7 +95,7 @@ Dancer::Plugin::Authorize - Dancer Authentication, Security and Role-Based Acces
 
 =head1 VERSION
 
-version 0.02
+version 0.03
 
 =head1 SYNOPSIS
 
