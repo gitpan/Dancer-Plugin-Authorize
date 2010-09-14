@@ -2,7 +2,7 @@
 
 package Dancer::Plugin::Authorize::Credentials;
 BEGIN {
-  $Dancer::Plugin::Authorize::Credentials::VERSION = '0.01';
+  $Dancer::Plugin::Authorize::Credentials::VERSION = '0.02';
 }
 
 use strict;
@@ -45,13 +45,14 @@ Dancer::Plugin::Authorize::Credentials - Dancer::Plugin::Authorize Credentials b
 
 =head1 VERSION
 
-version 0.01
+version 0.02
 
 =head1 SYNOPSIS
 
     package Dancer::Plugin::Authorize::Credentials::MyAuthorizationClass;
     use base 'Dancer::Plugin::Authorize::Credentials';
     
+    # every authentication class must have an authorize routine
     sub authorize {
         my ($self, $options, @arguments) = @_;
         my ($login, $password) = @arguments;

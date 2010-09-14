@@ -2,10 +2,8 @@
 
 package Dancer::Plugin::Authorize::Credentials::Config;
 BEGIN {
-  $Dancer::Plugin::Authorize::Credentials::Config::VERSION = '0.01';
+  $Dancer::Plugin::Authorize::Credentials::Config::VERSION = '0.02';
 }
-
-use Data::Dumper qw/Dumper/;
 
 use strict;
 use warnings;
@@ -93,7 +91,7 @@ Dancer::Plugin::Authorize::Credentials::Config - Dancer::Plugin::Authorize authe
 
 =head1 VERSION
 
-version 0.01
+version 0.02
 
 =head1 SYNOPSIS
 
