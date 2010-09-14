@@ -1,0 +1,43 @@
+layout: "main"
+logger: "file"
+appname: "Test"
+session: "YAML"
+plugins:
+  Authorize:
+    auth:
+      credentials:
+        class: Config
+        options:
+          accounts:
+            user01:
+              password: foobar
+              roles:
+                - guest
+                - user
+            user02:
+              password: barbaz
+              roles:
+                - admin
+      permissions:
+        class: Config
+        options:
+          control:
+            admin:
+              permissions:
+                manage accounts:
+                  operations:
+                    - view
+                    - create
+                    - update
+                    - delete
+            user:
+              permissions:
+                manage accounts:
+                  operations:
+                    - view
+                    - create
+            guests:
+              permissions:
+                manage accounts:
+                  operations:
+                    - view
