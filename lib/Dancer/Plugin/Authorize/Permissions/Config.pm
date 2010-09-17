@@ -2,7 +2,7 @@
 
 package Dancer::Plugin::Authorize::Permissions::Config;
 BEGIN {
-  $Dancer::Plugin::Authorize::Permissions::Config::VERSION = '0.03';
+  $Dancer::Plugin::Authorize::Permissions::Config::VERSION = '0.04';
 }
 
 use strict;
@@ -71,42 +71,16 @@ Dancer::Plugin::Authorize::Permissions::Config - Dancer::Plugin::Authorize acces
 
 =head1 VERSION
 
-version 0.03
+version 0.04
 
 =head1 SYNOPSIS
 
-    my $datastore = {
-        control => {
-            admin => {
-                permissions => {
-                    "manage accounts" => [qw/create view update delete/]
-                }
-            },
-            user => {
-                permissions => {
-                    "manage accounts" => [qw/create view/]
-                }
-            },
-            guest => {
-                permissions => {
-                    "manage accounts" => [qw/view/]
-                }
-            }
-        }
-    };
-
-    my $class = "Dancer::Plugin::Authorize::Permissions::Config";
-    print 'Im good!' if $class->new->subject_can($datastore, 'manage accounts', 'create');
-
-The Dancer application configuration file will be used as the role-based access control
-datastore, the permissions should be defined in the configuration file as follows:
-
     plugins:
       Authorize:
-        auth: # keyword allows one to setup multiple authentication schemes
+        mykeyword: 
           permissions:
             class: Config
-            options: # under permissions options control is where permissions should be defined
+            options: 
               control:
                 admin:
                   permissions:
@@ -127,12 +101,18 @@ datastore, the permissions should be defined in the configuration file as follow
                     manage accounts:
                       operations:
                         - view
+                        
+    # in Dancer application
+    
+    my $role = 'guests';
+    if (mykeyword_asa($role)) {
+        return 1;
+    }
 
 =head1 DESCRIPTION
 
 Dancer::Plugin::Authorize::Permissions::Config uses your Dancer application
-configuration file as the datastore where the application's permissions are
-stored and retrieved from. 
+configuration file as role-based access control system. 
 
 =head1 METHODS
 

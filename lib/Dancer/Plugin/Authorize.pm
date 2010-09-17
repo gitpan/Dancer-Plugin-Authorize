@@ -2,7 +2,7 @@
 
 package Dancer::Plugin::Authorize;
 BEGIN {
-  $Dancer::Plugin::Authorize::VERSION = '0.03';
+  $Dancer::Plugin::Authorize::VERSION = '0.04';
 }
 use strict;
 use warnings;
@@ -42,6 +42,34 @@ foreach my $key (keys %{ $settings }) {
         session 'user' => $user;
         
         return $credentialsClass->new->authorize($settings->{$key}->{credentials}->{options}, @_);
+        
+    };
+    
+    register $key . '_rls' => sub {
+        
+        if (@_) {
+            my $user = session('user');
+            if ($user) {
+                if ($user->{id}) {
+                    push @{$user->{roles}}, @_;
+                    session 'user' => $user;
+                }
+            }
+        }
+        else {
+            my $user = session('user');
+            if ($user) {
+                if ($user->{id}) {
+                    return $user->{roles};
+                }
+            }
+        }
+        
+    };
+    
+    register "un$key" => sub {
+        
+        return session 'user' => {};
         
     };
     
@@ -95,13 +123,20 @@ Dancer::Plugin::Authorize - Dancer Authentication, Security and Role-Based Acces
 
 =head1 VERSION
 
-version 0.03
+version 0.04
 
 =head1 SYNOPSIS
 
     post '/login' => sub {
     
         if (auth(params->{user}, params->{pass})) {
+        
+            # typically it is your responsibility to set the user's roles
+            # unless otherwise stated, typically your desired authentication class
+            # will supply your user's roles automatically
+            # --
+            # however the authenticated user's role may be set using fllowing command
+            # auth_rls(qw/guest moderator/);
             
             if (auth_asa('guest')) {
                 ...
@@ -128,10 +163,10 @@ As a role-based access control system Dancer::Plugin::Authorize can be complex b
 will give you the most flexibilty over all other access control methodologies.
 
 Mainly under the Authorize plugin section in the configuration file you'll have a
-keyword which defines all the authentication information needed for that particular
+keyword which defines the authentication information needed for that particular
 authentication scheme, this keyword exists solely to accomidate use-cases where
 multiple authentication schemes are needed. e.g. an application may need
-to authenticate different types of users differents, i.e. users may need LDAP
+to authenticate different types of users differently, i.e. users may need LDAP
 authentication and customers may need DBIC authentication. etc.
 
 Dancer::Plugin::Authorize then creates the following functions using your keywords:
@@ -139,9 +174,11 @@ Dancer::Plugin::Authorize then creates the following functions using your keywor
     $keyword = 'foo';
     foo()                           # authentication function
     foo_asa($role)                  # check if the authenticated user has the specified role
-    foo_can($operation, $action)   # check if the authenticated user has permission
+    foo_can($operation, $action)    # check if the authenticated user has permission
                                     # to perform a specific action
-    foo_err()                       # authentication errors 
+    foo_rls(@roles)                 # get or set roles for the current logged in user
+    foo_err()                       # authentication errors if any
+    unfoo()                         # revoke authorization (logout)
 
 The Dancer::Plugin::Authorize authentication framework relies on the L<Dancer::Plugin::Authorize::Credentials>
 namespace to do the actual authentication, and likewise relies on the L<Dancer::Plugin::Authorize::Permissions>

@@ -9,5 +9,6 @@ dist.ini
 lib/Dancer/Plugin/Authorize.pm
 lib/Dancer/Plugin/Authorize/Credentials.pm
 lib/Dancer/Plugin/Authorize/Credentials/Config.pm
+lib/Dancer/Plugin/Authorize/Credentials/Database.pm
 lib/Dancer/Plugin/Authorize/Permissions.pm
 lib/Dancer/Plugin/Authorize/Permissions/Config.pm

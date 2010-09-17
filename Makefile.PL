@@ -19,8 +19,10 @@ my %WriteMakefileArgs = (
   'EXE_FILES' => [],
   'LICENSE' => 'perl',
   'NAME' => 'Dancer::Plugin::Authorize',
-  'PREREQ_PM' => {},
-  'VERSION' => '0.03',
+  'PREREQ_PM' => {
+    'Dancer::Plugin::Database' => '0'
+  },
+  'VERSION' => '0.04',
   'test' => {
     'TESTS' => ''
   }
