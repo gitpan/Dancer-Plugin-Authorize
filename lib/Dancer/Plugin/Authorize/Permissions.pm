@@ -2,7 +2,7 @@
 
 package Dancer::Plugin::Authorize::Permissions;
 BEGIN {
-  $Dancer::Plugin::Authorize::Permissions::VERSION = '0.04';
+  $Dancer::Plugin::Authorize::Permissions::VERSION = '0.10';
 }
 
 use strict;
@@ -55,7 +55,7 @@ Dancer::Plugin::Authorize::Permissions - Dancer::Plugin::Authorize Permissions b
 
 =head1 VERSION
 
-version 0.04
+version 0.10
 
 =head1 SYNOPSIS
 
@@ -63,26 +63,11 @@ version 0.04
     use base 'Dancer::Plugin::Authorize::Permissions';
     
     # every permissions class must have subject_asa and subject_can routines
+    # the following defines a custom routine for checking the user's role
+    
     sub subject_asa {
         my ($self, $options, @arguments) = @_;
         my $role = shift @arguments;
-        my $settings = $class::settings;
-        
-        # Note! for permissions classes interacting with a database, storing all
-        # roles and actions with the user session will boost application
-        # performance and prevent polling repetitive information, e.g.
-        # $self->permissions($all_roles);
-        
-        if ($role) {
-            my $user = $self->credentials;
-            if (grep { /$role/ } @{$user->{roles}} ) {
-                return 1;
-            }
-        }
-        
-    }
-    
-    sub subject_can {
         ...
     }
     
@@ -96,7 +81,7 @@ class provides instantiation and simple error handling for your classes.
 
 =head1 AUTHOR
 
-Al Newkirk <awncorp@cpan.org>
+  Al Newkirk <awncorp@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 

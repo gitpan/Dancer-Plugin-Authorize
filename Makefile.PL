@@ -20,9 +20,14 @@ my %WriteMakefileArgs = (
   'LICENSE' => 'perl',
   'NAME' => 'Dancer::Plugin::Authorize',
   'PREREQ_PM' => {
+    'DBD::Pg' => '0',
+    'DBD::SQLite' => '0',
+    'DBD::mysql' => '0',
+    'DBI' => '0',
+    'Dancer' => '0',
     'Dancer::Plugin::Database' => '0'
   },
-  'VERSION' => '0.04',
+  'VERSION' => '0.10',
   'test' => {
     'TESTS' => ''
   }
@@ -31,10 +36,10 @@ my %WriteMakefileArgs = (
 
 unless ( eval { ExtUtils::MakeMaker->VERSION(6.56) } ) {
   my $br = delete $WriteMakefileArgs{BUILD_REQUIRES};
-  my $pp = $WriteMakefileArgs{PREREQ_PM};
+  my $pp = $WriteMakefileArgs{PREREQ_PM}; 
   for my $mod ( keys %$br ) {
     if ( exists $pp->{$mod} ) {
-      $pp->{$mod} = $br->{$mod} if $br->{$mod} > $pp->{$mod};
+      $pp->{$mod} = $br->{$mod} if $br->{$mod} > $pp->{$mod}; 
     }
     else {
       $pp->{$mod} = $br->{$mod};

@@ -2,7 +2,7 @@
 
 package Dancer::Plugin::Authorize::Credentials;
 BEGIN {
-  $Dancer::Plugin::Authorize::Credentials::VERSION = '0.04';
+  $Dancer::Plugin::Authorize::Credentials::VERSION = '0.10';
 }
 
 use strict;
@@ -45,7 +45,7 @@ Dancer::Plugin::Authorize::Credentials - Dancer::Plugin::Authorize Credentials b
 
 =head1 VERSION
 
-version 0.04
+version 0.10
 
 =head1 SYNOPSIS
 
@@ -56,38 +56,7 @@ version 0.04
     sub authorize {
         my ($self, $options, @arguments) = @_;
         my ($login, $password) = @arguments;
-        my $settings = $class::settings;
-        
-        if ($login && $password) {
-            
-            # try to perform login
-            if ($passed) {
-                
-                my $session_data = {
-                    id    => '...',
-                    name  => '...',
-                    login => '...',
-                    roles => [qw/ ... /],
-                    error => []
-                };
-                return $self->credentials($session_data);
-                
-            }
-            
-        }
-        else {
-            
-            # try session checking
-            my $user = $self->credentials;
-            if ($user) {
-                ...
-            }
-            else {
-                $self->errors(@errors);
-            }
-            
-        }
-        
+        ...
     }
     
     1;
@@ -100,7 +69,7 @@ class provides instantiation and simple error handling for your authorization cl
 
 =head1 AUTHOR
 
-Al Newkirk <awncorp@cpan.org>
+  Al Newkirk <awncorp@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
