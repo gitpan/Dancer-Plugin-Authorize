@@ -2,7 +2,7 @@
 
 package Dancer::Plugin::Authorize::Permissions::Config;
 BEGIN {
-  $Dancer::Plugin::Authorize::Permissions::Config::VERSION = '0.10';
+  $Dancer::Plugin::Authorize::Permissions::Config::VERSION = '0.1001';
 }
 
 use strict;
@@ -78,7 +78,7 @@ Dancer::Plugin::Authorize::Permissions::Config - Dancer::Plugin::Authorize acces
 
 =head1 VERSION
 
-version 0.10
+version 0.1001
 
 =head1 SYNOPSIS
 
@@ -130,11 +130,9 @@ perform the specified action under that operation.
 
     return 1 if subject_can($self, $options, $operation, $action);
 
-=head1 METHODS
-
 =head1 AUTHOR
 
-  Al Newkirk <awncorp@cpan.org>
+Al Newkirk <awncorp@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 

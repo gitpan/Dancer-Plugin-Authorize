@@ -2,7 +2,7 @@
 
 package Dancer::Plugin::Authorize::Credentials::MySQL;
 BEGIN {
-  $Dancer::Plugin::Authorize::Credentials::MySQL::VERSION = '0.10';
+  $Dancer::Plugin::Authorize::Credentials::MySQL::VERSION = '0.1001';
 }
 
 use strict;
@@ -84,7 +84,7 @@ Dancer::Plugin::Authorize::Credentials::MySQL - Dancer::Plugin::Authorize authen
 
 =head1 VERSION
 
-version 0.10
+version 0.1001
 
 =head1 SYNOPSIS
 
@@ -166,11 +166,9 @@ options and arguments.
     INSERT INTO `users` (name, login, password, roles)
     VALUES ('Administrator', 'admin', '*****', 'guest, user, admin');
 
-=head1 METHODS
-
 =head1 AUTHOR
 
-  Al Newkirk <awncorp@cpan.org>
+Al Newkirk <awncorp@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
