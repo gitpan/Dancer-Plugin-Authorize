@@ -19,4 +19,4 @@ requires:
   DBI: 0
   Dancer: 0
   Dancer::Plugin::Database: 0
-version: 0.1001
+version: 0.1010

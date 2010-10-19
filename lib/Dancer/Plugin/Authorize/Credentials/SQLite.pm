@@ -2,7 +2,7 @@
 
 package Dancer::Plugin::Authorize::Credentials::SQLite;
 BEGIN {
-  $Dancer::Plugin::Authorize::Credentials::SQLite::VERSION = '0.1001';
+  $Dancer::Plugin::Authorize::Credentials::SQLite::VERSION = '0.1010';
 }
 
 use strict;
@@ -53,6 +53,7 @@ sub authorize {
         }
         else {
             $self->errors('login and/or password is invalid');
+            return undef;
         }
     
     }
@@ -68,10 +69,11 @@ sub authorize {
         }
         else {
             $self->errors('you are not authorized', 'your session may have ended');
+            return undef;
         }
         
     }
-    
+    return undef;
 }
 
 1;
@@ -84,7 +86,7 @@ Dancer::Plugin::Authorize::Credentials::SQLite - Dancer::Plugin::Authorize authe
 
 =head1 VERSION
 
-version 0.1001
+version 0.1010
 
 =head1 SYNOPSIS
 

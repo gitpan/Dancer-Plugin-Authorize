@@ -10,5 +10,6 @@ lib/Dancer/Plugin/Authorize/Credentials/Config.pm
 lib/Dancer/Plugin/Authorize/Credentials/MySQL.pm
 lib/Dancer/Plugin/Authorize/Credentials/PostgreSQL.pm
 lib/Dancer/Plugin/Authorize/Credentials/SQLite.pm
+lib/Dancer/Plugin/Authorize/Credentials/logs/development.log
 lib/Dancer/Plugin/Authorize/Permissions.pm
 lib/Dancer/Plugin/Authorize/Permissions/Config.pm
