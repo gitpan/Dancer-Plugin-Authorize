@@ -2,7 +2,7 @@
 
 package Dancer::Plugin::Authorize::Credentials::Config;
 BEGIN {
-  $Dancer::Plugin::Authorize::Credentials::Config::VERSION = '0.1010';
+  $Dancer::Plugin::Authorize::Credentials::Config::VERSION = '0.1110';
 }
 
 use strict;
@@ -25,7 +25,7 @@ sub authorize {
         
         unless ($password) {
             $self->errors('login and password are required');
-            return undef;
+            return 0;
         }
     
         if (defined $accounts->{$login}) {
@@ -46,19 +46,19 @@ sub authorize {
                 }
                 else {
                     $self->errors('login and/or password is invalid');
-                    return undef;
+                    return 0;
                 }
                 
             }
             else {
                 $self->errors('attempting to access as inaccessible account');
-                return undef;
+                return 0;
             }
             
         }
         else {
             $self->errors('login and/or password is invalid');
-            return undef;
+            return 0;
         }
     
     }
@@ -74,7 +74,7 @@ sub authorize {
         }
         else {
             $self->errors('you are not authorized', 'your session may have ended');
-            return undef;
+            return 0;
         }
         
     }
@@ -91,7 +91,7 @@ Dancer::Plugin::Authorize::Credentials::Config - Dancer::Plugin::Authorize authe
 
 =head1 VERSION
 
-version 0.1010
+version 0.1110
 
 =head1 SYNOPSIS
 

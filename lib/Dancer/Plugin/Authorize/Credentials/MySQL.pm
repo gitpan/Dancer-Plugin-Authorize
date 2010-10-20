@@ -2,13 +2,12 @@
 
 package Dancer::Plugin::Authorize::Credentials::MySQL;
 BEGIN {
-  $Dancer::Plugin::Authorize::Credentials::MySQL::VERSION = '0.1010';
+  $Dancer::Plugin::Authorize::Credentials::MySQL::VERSION = '0.1110';
 }
 
 use strict;
 use warnings;
 use base qw/Dancer::Plugin::Authorize::Credentials/;
-use Dancer;
 use Dancer::Plugin::Database;
 
 
@@ -25,14 +24,12 @@ sub authorize {
         
         unless ($password) {
             $self->errors('login and password are required');
-            return undef;
+            return 0;
         }
         
         my $sth = database($options->{handle})->prepare(
             'SELECT * FROM `users` WHERE login = ? AND password = ?',
         );  $sth->execute($login, $password) if $sth;
-        
-        die 'Can\'t connect to the database' unless $sth;
         
         my $accounts = $sth->fetchrow_hashref;
     
@@ -53,7 +50,7 @@ sub authorize {
         }
         else {
             $self->errors('login and/or password is invalid');
-            return undef;
+            return 0;
         }
     
     }
@@ -69,7 +66,7 @@ sub authorize {
         }
         else {
             $self->errors('you are not authorized', 'your session may have ended');
-            return undef;
+            return 0;
         }
         
     }
@@ -86,7 +83,7 @@ Dancer::Plugin::Authorize::Credentials::MySQL - Dancer::Plugin::Authorize authen
 
 =head1 VERSION
 
-version 0.1010
+version 0.1110
 
 =head1 SYNOPSIS
 

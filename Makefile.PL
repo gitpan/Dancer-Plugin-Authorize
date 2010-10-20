@@ -27,7 +27,7 @@ my %WriteMakefileArgs = (
     'Dancer' => '0',
     'Dancer::Plugin::Database' => '0'
   },
-  'VERSION' => '0.1010',
+  'VERSION' => '0.1110',
   'test' => {
     'TESTS' => ''
   }

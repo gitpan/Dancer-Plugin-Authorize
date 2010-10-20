@@ -2,7 +2,7 @@
 
 package Dancer::Plugin::Authorize::Credentials;
 BEGIN {
-  $Dancer::Plugin::Authorize::Credentials::VERSION = '0.1010';
+  $Dancer::Plugin::Authorize::Credentials::VERSION = '0.1110';
 }
 
 use strict;
@@ -32,7 +32,9 @@ sub errors {
     my ($self, @errors) = @_;
     my $user = session('user');
     push @{$user->{error}}, @errors; 
-    return session 'user' => $user;
+    #return session 'user' => $user;
+    session 'user' => $user;
+    return @errors;
 }
 
 1;
@@ -45,7 +47,7 @@ Dancer::Plugin::Authorize::Credentials - Dancer::Plugin::Authorize Credentials b
 
 =head1 VERSION
 
-version 0.1010
+version 0.1110
 
 =head1 SYNOPSIS
 
