@@ -13,10 +13,6 @@ meta-spec:
   version: 1.4
 name: Dancer-Plugin-Authorize
 requires:
-  DBD::Pg: 0
-  DBD::SQLite: 0
-  DBD::mysql: 0
-  DBI: 0
   Dancer: 0
   Dancer::Plugin::Database: 0
-version: 0.1110
+version: 0.1111

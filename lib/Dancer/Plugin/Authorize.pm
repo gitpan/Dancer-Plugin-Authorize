@@ -2,16 +2,19 @@
 
 package Dancer::Plugin::Authorize;
 BEGIN {
-  $Dancer::Plugin::Authorize::VERSION = '0.1110';
+  $Dancer::Plugin::Authorize::VERSION = '0.1111';
 }
 use strict;
 use warnings;
 use Dancer qw/:syntax/;
 use Dancer::Plugin;
 
-our $settings = plugin_setting;
+our $settings = {};
 
-register auth => sub { return Dancer::Plugin::Authorize->new(@_) };
+register auth => sub { 
+    $settings = plugin_setting;
+    return Dancer::Plugin::Authorize->new(@_) 
+};
 
 
 sub new {
@@ -129,7 +132,7 @@ Dancer::Plugin::Authorize - Dancer Authentication, Security and Role-Based Acces
 
 =head1 VERSION
 
-version 0.1110
+version 0.1111
 
 =head1 SYNOPSIS
 
