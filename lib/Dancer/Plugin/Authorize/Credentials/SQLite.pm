@@ -2,7 +2,7 @@
 
 package Dancer::Plugin::Authorize::Credentials::SQLite;
 BEGIN {
-  $Dancer::Plugin::Authorize::Credentials::SQLite::VERSION = '0.1111';
+  $Dancer::Plugin::Authorize::Credentials::SQLite::VERSION = '1.103070';
 }
 
 use strict;
@@ -84,7 +84,7 @@ Dancer::Plugin::Authorize::Credentials::SQLite - Dancer::Plugin::Authorize authe
 
 =head1 VERSION
 
-version 0.1111
+version 1.103070
 
 =head1 SYNOPSIS
 

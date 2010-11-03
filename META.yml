@@ -15,4 +15,4 @@ name: Dancer-Plugin-Authorize
 requires:
   Dancer: 0
   Dancer::Plugin::Database: 0
-version: 0.1111
+version: 1.103070

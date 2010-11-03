@@ -2,7 +2,7 @@
 
 package Dancer::Plugin::Authorize::Credentials;
 BEGIN {
-  $Dancer::Plugin::Authorize::Credentials::VERSION = '0.1111';
+  $Dancer::Plugin::Authorize::Credentials::VERSION = '1.103070';
 }
 
 use strict;
@@ -47,7 +47,7 @@ Dancer::Plugin::Authorize::Credentials - Dancer::Plugin::Authorize Credentials b
 
 =head1 VERSION
 
-version 0.1111
+version 1.103070
 
 =head1 SYNOPSIS
 

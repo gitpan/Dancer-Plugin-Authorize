@@ -2,7 +2,7 @@
 
 package Dancer::Plugin::Authorize::Credentials::PostgreSQL;
 BEGIN {
-  $Dancer::Plugin::Authorize::Credentials::PostgreSQL::VERSION = '0.1111';
+  $Dancer::Plugin::Authorize::Credentials::PostgreSQL::VERSION = '1.103070';
 }
 
 use strict;
@@ -83,7 +83,7 @@ Dancer::Plugin::Authorize::Credentials::PostgreSQL - Dancer::Plugin::Authorize a
 
 =head1 VERSION
 
-version 0.1111
+version 1.103070
 
 =head1 SYNOPSIS
 
