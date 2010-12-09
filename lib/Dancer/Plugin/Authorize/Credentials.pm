@@ -2,7 +2,7 @@
 
 package Dancer::Plugin::Authorize::Credentials;
 BEGIN {
-  $Dancer::Plugin::Authorize::Credentials::VERSION = '1.103070';
+  $Dancer::Plugin::Authorize::Credentials::VERSION = '1.103430';
 }
 
 use strict;
@@ -47,7 +47,7 @@ Dancer::Plugin::Authorize::Credentials - Dancer::Plugin::Authorize Credentials b
 
 =head1 VERSION
 
-version 1.103070
+version 1.103430
 
 =head1 SYNOPSIS
 
@@ -71,7 +71,7 @@ class provides instantiation and simple error handling for your authorization cl
 
 =head1 AUTHOR
 
-Al Newkirk <awncorp@cpan.org>
+  Al Newkirk <awncorp@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 

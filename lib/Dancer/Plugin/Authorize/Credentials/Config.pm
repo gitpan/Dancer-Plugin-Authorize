@@ -2,7 +2,7 @@
 
 package Dancer::Plugin::Authorize::Credentials::Config;
 BEGIN {
-  $Dancer::Plugin::Authorize::Credentials::Config::VERSION = '1.103070';
+  $Dancer::Plugin::Authorize::Credentials::Config::VERSION = '1.103430';
 }
 
 use strict;
@@ -91,7 +91,7 @@ Dancer::Plugin::Authorize::Credentials::Config - Dancer::Plugin::Authorize authe
 
 =head1 VERSION
 
-version 1.103070
+version 1.103430
 
 =head1 SYNOPSIS
 
@@ -141,7 +141,7 @@ the defined datastore using the supplied arguments and configuration file option
 
 =head1 AUTHOR
 
-Al Newkirk <awncorp@cpan.org>
+  Al Newkirk <awncorp@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 

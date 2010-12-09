@@ -1,13 +1,17 @@
-# ABSTRACT: Dancer Authentication, Security and Role-Based Access Control Framework!
+# ABSTRACT: DEPRECATED! Please use L<Dancer::Plugin::Auth::RBAC>.
 
 package Dancer::Plugin::Authorize;
 BEGIN {
-  $Dancer::Plugin::Authorize::VERSION = '1.103070';
+  $Dancer::Plugin::Authorize::VERSION = '1.103430';
 }
 use strict;
 use warnings;
 use Dancer qw/:syntax/;
 use Dancer::Plugin;
+
+BEGIN {
+    warn "THIS MODULE IS DEPRECATED. PLEASE USE Dancer::Plugin::Auth::RBAC";
+};
 
 our $settings = {};
 
@@ -137,11 +141,11 @@ __END__
 
 =head1 NAME
 
-Dancer::Plugin::Authorize - Dancer Authentication, Security and Role-Based Access Control Framework!
+Dancer::Plugin::Authorize - DEPRECATED! Please use L<Dancer::Plugin::Auth::RBAC>.
 
 =head1 VERSION
 
-version 1.103070
+version 1.103430
 
 =head1 SYNOPSIS
 
@@ -201,6 +205,14 @@ This framework also ship with L<Dancer::Plugin::Authorize::Credentials::SQLite>,
 L<Dancer::Plugin::Authorize::Credentials::MySQL>, L<Dancer::Plugin::Authorize::Credentials::PostrgeSQL>
 which are arguably easier to setup and utilize.
 
+=head1 DEPRECATION WARNING
+
+This module has been deprecated in favor of L<Dancer::Plugin::Auth::RBAC> which
+is currently a complete fork but will be maintained and improved instead of this
+one.
+
+In due time this will probably be deleted.
+
 =head1 CONFIGURATION
 
     plugins:
@@ -244,7 +256,7 @@ which are arguably easier to setup and utilize.
 
 =head1 AUTHOR
 
-Al Newkirk <awncorp@cpan.org>
+  Al Newkirk <awncorp@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 

@@ -2,7 +2,7 @@
 
 package Dancer::Plugin::Authorize::Permissions::Config;
 BEGIN {
-  $Dancer::Plugin::Authorize::Permissions::Config::VERSION = '1.103070';
+  $Dancer::Plugin::Authorize::Permissions::Config::VERSION = '1.103430';
 }
 
 use strict;
@@ -78,7 +78,7 @@ Dancer::Plugin::Authorize::Permissions::Config - Dancer::Plugin::Authorize acces
 
 =head1 VERSION
 
-version 1.103070
+version 1.103430
 
 =head1 SYNOPSIS
 
@@ -132,7 +132,7 @@ perform the specified action under that operation.
 
 =head1 AUTHOR
 
-Al Newkirk <awncorp@cpan.org>
+  Al Newkirk <awncorp@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 

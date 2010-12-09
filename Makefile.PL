@@ -9,7 +9,7 @@ use ExtUtils::MakeMaker 6.31;
 
 
 my %WriteMakefileArgs = (
-  'ABSTRACT' => 'Dancer Authentication, Security and Role-Based Access Control Framework!',
+  'ABSTRACT' => 'DEPRECATED! Please use L<Dancer::Plugin::Auth::RBAC>.',
   'AUTHOR' => 'Al Newkirk <awncorp@cpan.org>',
   'BUILD_REQUIRES' => {},
   'CONFIGURE_REQUIRES' => {
@@ -23,7 +23,7 @@ my %WriteMakefileArgs = (
     'Dancer' => '0',
     'Dancer::Plugin::Database' => '0'
   },
-  'VERSION' => '1.103070',
+  'VERSION' => '1.103430',
   'test' => {
     'TESTS' => 't/*.t'
   }

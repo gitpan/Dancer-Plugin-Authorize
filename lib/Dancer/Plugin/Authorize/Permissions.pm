@@ -2,7 +2,7 @@
 
 package Dancer::Plugin::Authorize::Permissions;
 BEGIN {
-  $Dancer::Plugin::Authorize::Permissions::VERSION = '1.103070';
+  $Dancer::Plugin::Authorize::Permissions::VERSION = '1.103430';
 }
 
 use strict;
@@ -55,7 +55,7 @@ Dancer::Plugin::Authorize::Permissions - Dancer::Plugin::Authorize Permissions b
 
 =head1 VERSION
 
-version 1.103070
+version 1.103430
 
 =head1 SYNOPSIS
 
@@ -81,7 +81,7 @@ class provides instantiation and simple error handling for your classes.
 
 =head1 AUTHOR
 
-Al Newkirk <awncorp@cpan.org>
+  Al Newkirk <awncorp@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
