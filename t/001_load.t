@@ -1,6 +1,7 @@
 use strict;
 use warnings;
-use Test::More tests => 2, import => ['!pass'];
+use Test::More skip_all => 'deprecated, use Dancer::Plugin::Auth::RBAC instead';
+__END__
 use Test::Exception;
 
 BEGIN { 

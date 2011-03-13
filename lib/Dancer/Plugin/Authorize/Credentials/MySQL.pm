@@ -2,7 +2,7 @@
 
 package Dancer::Plugin::Authorize::Credentials::MySQL;
 BEGIN {
-  $Dancer::Plugin::Authorize::Credentials::MySQL::VERSION = '1.103430';
+  $Dancer::Plugin::Authorize::Credentials::MySQL::VERSION = '1.110720';
 }
 
 use strict;
@@ -83,7 +83,7 @@ Dancer::Plugin::Authorize::Credentials::MySQL - Dancer::Plugin::Authorize authen
 
 =head1 VERSION
 
-version 1.103430
+version 1.110720
 
 =head1 SYNOPSIS
 

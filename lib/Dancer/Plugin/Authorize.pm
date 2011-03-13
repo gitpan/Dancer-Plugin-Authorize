@@ -2,7 +2,7 @@
 
 package Dancer::Plugin::Authorize;
 BEGIN {
-  $Dancer::Plugin::Authorize::VERSION = '1.103430';
+  $Dancer::Plugin::Authorize::VERSION = '1.110720';
 }
 use strict;
 use warnings;
@@ -145,7 +145,7 @@ Dancer::Plugin::Authorize - DEPRECATED! Please use L<Dancer::Plugin::Auth::RBAC>
 
 =head1 VERSION
 
-version 1.103430
+version 1.110720
 
 =head1 SYNOPSIS
 
